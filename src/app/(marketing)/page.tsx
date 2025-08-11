@@ -1,4 +1,4 @@
-import Hero from './_PageSections/Hero';
+import Hero from '@/components/Hero';
 import FeatureList from './_PageSections/FeatureList';
 import Feature from './_PageSections/Feature';
 import LogoCloud from './_PageSections/LogoCloud';
