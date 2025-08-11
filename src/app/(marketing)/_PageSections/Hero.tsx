@@ -24,11 +24,11 @@ export default function Hero() {
       <section className="py-8 px-4">
         <div className="flex flex-col items-center gap-4 text-center">
           <h1 className=" text-3xl md:text-7xl md:max-w-[54rem] ">
-            An example app built using Next.js 13 server components.
+            IoT for your business.
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            I&apos;m building a web app with Next.js 13 and open sourcing everything. Follow along
-            as we figure this out together.
+            We&apos;re building an IoT and AI powered platform and open sourcing the journey. Join
+            us as we explore the future together.
           </p>
           <div className="space-x-4">
             <Link href="/login" className={cn(buttonVariants({ size: 'lg' }))}>
