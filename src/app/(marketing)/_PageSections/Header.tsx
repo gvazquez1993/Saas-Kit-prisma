@@ -31,6 +31,9 @@ export const Header = () => {
             className={cn(buttonVariants({ size: 'sm' }), 'px-6')}
           >
             {t.navbar.requestDemo}
+
+            Request a Demo
+
           </Link>
           <Link
             href="/auth/login"
@@ -40,6 +43,7 @@ export const Header = () => {
             )}
           >
             {t.navbar.login}
+            Login
           </Link>
         </div>
       </div>
