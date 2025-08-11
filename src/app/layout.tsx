@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import NextTopLoader from 'nextjs-toploader';
 import config from '@/lib/config/site';
+import { I18nProvider } from '@/components/I18nProvider';
 import Navbar from '@/components/Navbar';
 
 const RootLayout = ({ children }) => {
@@ -17,6 +18,10 @@ const RootLayout = ({ children }) => {
           enableSystem
           disableTransitionOnChange
         >
+          <I18nProvider>
+            <NextTopLoader color={config.loading_bar_color} />
+            {children}
+          </I18nProvider>
           <NextTopLoader color={config.loading_bar_color} />
           <Navbar />
           {children}
