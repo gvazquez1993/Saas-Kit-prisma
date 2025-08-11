@@ -1,7 +1,12 @@
 import siteConfig from './site';
 
 const config = {
-  routes: [{ title: 'Pricing', link: '/pricing' }],
+  routes: [
+    { title: 'Solution', link: '#solution' },
+    { title: 'Use Cases', link: '#use-cases' },
+    { title: 'Pricing', link: '#pricing' },
+    { title: 'Contact', link: '#contact' }
+  ],
   footer_nav: {
     about: {
       title: 'About',
