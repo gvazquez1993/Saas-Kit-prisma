@@ -24,17 +24,14 @@ export const Header = () => {
         <MainLogoText />
         <Nav items={routes} />
         <div className="flex items-center space-x-2">
-          <ThemeDropDownMenu />
-          <LanguageSwitcher />
           <Link
             href="/demo"
             className={cn(buttonVariants({ size: 'sm' }), 'px-6')}
           >
             {t.navbar.requestDemo}
-
-            Request a Demo
-
           </Link>
+          <ThemeDropDownMenu />
+          <LanguageSwitcher />
           <Link
             href="/auth/login"
             className={cn(
@@ -43,7 +40,6 @@ export const Header = () => {
             )}
           >
             {t.navbar.login}
-            Login
           </Link>
         </div>
       </div>

@@ -1,106 +1,111 @@
 'use client';
 
-import { useState } from 'react';
-import { Globe } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { Globe } from 'lucide-react';
-import { usePathname } from 'next/navigation';
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from '@/components/ui/DropdownMenu';
-import { useI18n } from './I18nProvider';
+import * as React from 'react';
+import { useI18n } from '@/components/I18nProvider';
 
-export const LanguageSwitcher = () => {
-  const { setLocale } = useI18n();
-  const [open, setOpen] = useState(false);
+// Simple globe icon using inline SVG to avoid extra dependencies
+function GlobeIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      aria-hidden="true"
+      {...props}
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        fill="none"
+        strokeWidth="1.5"
+      />
+      <ellipse
+        cx="12"
+        cy="12"
+        rx="5"
+        ry="10"
+        stroke="currentColor"
+        fill="none"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M2 12h20"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}
 
-  const handleSelect = (lang: 'en' | 'es') => {
-    setLocale(lang);
+export const LanguageSwitcher: React.FC = () => {
+  const { locale, setLocale } = useI18n();
+  const [open, setOpen] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement | null>(null);
+
+  // Close on outside click or Esc
+  React.useEffect(() => {
+    function onClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', onClickOutside);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onClickOutside);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, []);
+
+  const select = (lang: 'en' | 'es') => {
+    setLocale(lang); // instant swap, no navigation
     setOpen(false);
   };
 
-export const LanguageSwitcher = () => {
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   return (
-    <div className="relative">
-      <DropdownMenu open={open} onOpenChange={setOpen}>
-        <DropdownMenuTrigger asChild>
-          <button
-            type="button"
-            aria-haspopup="menu"
-            aria-expanded={open}
-            aria-controls="language-menu"
-            aria-label="Change language"
-            className="inline-flex items-center justify-center rounded-full p-2 hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-          >
-            <Globe className="h-5 w-5" />
-          </button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent
-          id="language-menu"
-          role="menu"
-          align="end"
-          className="w-24 rounded-lg border bg-white shadow-lg dark:bg-neutral-900 z-50 p-1"
-        >
-          <DropdownMenuItem
-            onSelect={() => handleSelect('en')}
-
-      <DropdownMenuTrigger asChild>
-        <button
-          type="button"
-          aria-haspopup="menu"
-          aria-expanded={open}
-          aria-controls="language-menu"
-          aria-label="Change language"
-          className="inline-flex items-center justify-center rounded-full p-2 hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-        >
-          <Globe className="h-5 w-5" />
-        </button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent
-        id="language-menu"
-        role="menu"
-        align="end"
-        className="w-28 rounded-lg border bg-white shadow-lg dark:bg-neutral-900 p-1"
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-controls="lang-menu"
+        aria-label="Change language"
+        onClick={() => setOpen((v) => !v)}
+        className="inline-flex items-center justify-center rounded-full p-2 hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
       >
-        <DropdownMenuItem asChild>
-          <Link
-            href={pathname ?? '/'}
-            locale="en"
+        <GlobeIcon />
+      </button>
+      {open && (
+        <div
+          id="lang-menu"
+          role="menu"
+          className="absolute right-0 mt-2 w-24 rounded-lg border bg-white shadow-lg dark:bg-neutral-900 z-50 p-1"
+        >
+          <button
             role="menuitem"
             className="block w-full text-left px-3 py-2 rounded-md hover:bg-muted text-sm"
+            onClick={() => select('en')}
+            aria-current={locale === 'en' ? 'true' : undefined}
           >
             EN
-          </DropdownMenuItem>
-          <DropdownMenuItem
-            onSelect={() => handleSelect('es')}
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link
-            href={pathname ?? '/'}
-            locale="es"
+          </button>
+          <button
             role="menuitem"
             className="block w-full text-left px-3 py-2 rounded-md hover:bg-muted text-sm"
+            onClick={() => select('es')}
+            aria-current={locale === 'es' ? 'true' : undefined}
           >
             ES
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-          </Link>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+          </button>
+        </div>
+      )}
     </div>
   );
 };
