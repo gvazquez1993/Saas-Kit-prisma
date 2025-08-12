@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import NextTopLoader from 'nextjs-toploader';
 import config from '@/lib/config/site';
 import { I18nProvider } from '@/components/I18nProvider';
-import Navbar from '@/components/Navbar';
 
 const RootLayout = ({ children }) => {
   return (
@@ -22,9 +21,6 @@ const RootLayout = ({ children }) => {
             <NextTopLoader color={config.loading_bar_color} />
             {children}
           </I18nProvider>
-          <NextTopLoader color={config.loading_bar_color} />
-          <Navbar />
-          {children}
         </ThemeProvider>
         <ToastContainer position="bottom-right" />
       </body>
