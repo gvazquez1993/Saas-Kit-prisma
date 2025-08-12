@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import { Icons } from '@/components/Icons';
 import { useI18n } from '@/components/I18nProvider';
@@ -11,6 +12,7 @@ export default function Hero() {
   return (
     <section className="py-16 lg:py-24">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:px-8">
+        {/* Left: copy */}
         <div>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
             {t.hero.h1}
@@ -29,6 +31,7 @@ export default function Hero() {
             >
               {t.hero.cta1}
             </Link>
+
             <Link
               href="#use-cases"
               className="w-full sm:w-auto text-base font-medium underline underline-offset-4 hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 text-center"
@@ -49,7 +52,7 @@ export default function Hero() {
           </ul>
         </div>
 
-        {/* Image / placeholder */}
+        {/* Right: image / placeholder */}
         <div className="relative w-full">
           <div className="aspect-[16/10] w-full rounded-xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-neutral-700 dark:to-neutral-800 flex items-center justify-center text-muted-foreground">
             <span aria-hidden="true">Product Screenshot</span>

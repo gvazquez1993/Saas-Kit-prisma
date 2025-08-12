@@ -133,6 +133,35 @@ export const i18nDict: Record<Locale, {
         },
       ],
     },
+    social: {
+      trusted: 'Confiado por líderes en logística, manufactura y retail',
+      logosAlt: 'Logotipos de socios y clientes',
+    },
+    valueProps: {
+      title: 'Por qué ANGai',
+      items: [
+        {
+          iconLabel: 'Integración',
+          title: 'Integración sencilla',
+          text: 'Conecta con tu red de cámaras existente en minutos — sin hardware adicional.',
+        },
+        {
+          iconLabel: 'Tiempo real',
+          title: 'Detección en tiempo real',
+          text: 'Recibe alertas instantáneas de vehículos, pallets y movimientos de mercancías.',
+        },
+        {
+          iconLabel: 'Reportes',
+          title: 'Reportes accionables',
+          text: 'Accede a auditorías detalladas, KPIs y documentación lista para cumplimiento.',
+        },
+        {
+          iconLabel: 'Escalable',
+          title: 'SaaS escalable',
+          text: 'Escala de un sitio a cientos con una plataforma en la nube totalmente gestionada.',
+        },
+      ],
+    },
   },
 };
 
