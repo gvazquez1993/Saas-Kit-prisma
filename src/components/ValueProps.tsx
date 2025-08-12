@@ -30,6 +30,28 @@ const icons = {
       <path d="M4 17h6v3H4zM10 13h6v7h-6zM16 9h6v11h-6z" fill="none" stroke="currentColor" />
     </svg>
   ),
+  Edge: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" {...props}>
+      <circle cx="12" cy="12" r="3" stroke="currentColor" fill="none" />
+      <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" />
+    </svg>
+  ),
+  Privacy: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" {...props}>
+      <path d="M12 3l8 4v5c0 5-3 9-8 10-5-1-8-5-8-10V7l8-4z" stroke="currentColor" fill="none" />
+    </svg>
+  ),
+  Integrations: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" {...props}>
+      <path d="M9 2v6M15 2v6M7 10h10v4a5 5 0 11-10 0v-4z" stroke="currentColor" fill="none" />
+    </svg>
+  ),
+  FinOps: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" {...props}>
+      <circle cx="12" cy="12" r="8" stroke="currentColor" fill="none" />
+      <path d="M12 8v8M9 12h6" stroke="currentColor" />
+    </svg>
+  ),
 };
 
 export const ValueProps: React.FC = () => {
@@ -38,11 +60,16 @@ export const ValueProps: React.FC = () => {
 
   // Map icon by English iconLabel; Spanish variant maps to the same keys
   const iconFor = (label: string) => {
-    if (label.toLowerCase().includes('integr')) return icons.Integration;
-    if (label.toLowerCase().includes('real')) return icons['Real-time'];
-    if (label.toLowerCase().includes('report')) return icons.Reports;
+    const lower = label.toLowerCase();
+    if (lower.includes('integrations') || lower.includes('integraciones')) return icons.Integrations;
+    if (lower.includes('integration') || lower.includes('integración')) return icons.Integration;
+    if (lower.includes('real')) return icons['Real-time'];
+    if (lower.includes('report') || lower.includes('reporte')) return icons.Reports;
+    if (lower.includes('edge')) return icons.Edge;
+    if (lower.includes('priv')) return icons.Privacy;
+    if (lower.includes('finops') || lower.includes('cost')) return icons.FinOps;
+    if (lower.includes('scal') || lower.includes('escal')) return icons.Scalable;
     return icons.Scalable;
-    // default
   };
 
   return (

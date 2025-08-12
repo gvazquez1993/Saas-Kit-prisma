@@ -22,6 +22,7 @@ export const i18nDict: Record<Locale, {
   social: {
     trusted: string;
     logosAlt: string;
+    tech: string[];
   };
   valueProps: {
     title: string;
@@ -30,6 +31,13 @@ export const i18nDict: Record<Locale, {
       title: string;
       text: string;
     }[];
+  };
+  promise: {
+    kicker: string;
+    title: string;
+    body: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
   };
 }> = {
   en: {
@@ -54,8 +62,9 @@ export const i18nDict: Record<Locale, {
       ],
     },
     social: {
-      trusted: 'Trusted by leaders in logistics, manufacturing, and retail',
-      logosAlt: 'Partner and customer logos',
+      trusted: 'Built with a modern, proven stack',
+      logosAlt: 'Technology ecosystem logos',
+      tech: ['AWS', 'Kubernetes', 'Terraform', 'OpenCV', 'Python', 'ONVIF'],
     },
     valueProps: {
       title: 'Why ANGai',
@@ -80,7 +89,34 @@ export const i18nDict: Record<Locale, {
           title: 'Scalable SaaS',
           text: 'Grow from one site to hundreds with a fully managed cloud platform.',
         },
+        {
+          iconLabel: 'Edge',
+          title: 'Edge + Cloud',
+          text: 'Run models at the edge or in the cloud to balance latency and cost.',
+        },
+        {
+          iconLabel: 'Privacy',
+          title: 'Security & privacy',
+          text: 'Role-based access, on-prem options, and anonymization for sensitive footage.',
+        },
+        {
+          iconLabel: 'Integrations',
+          title: 'ERP/WMS integrations',
+          text: 'Connect with your ERP/WMS via REST/Webhooks for automated workflows.',
+        },
+        {
+          iconLabel: 'FinOps',
+          title: 'Cost control',
+          text: 'Usage-based pricing, monitoring and optimizations to keep costs predictable.',
+        },
       ],
+    },
+    promise: {
+      kicker: 'Deploy in days, not months',
+      title: 'From cameras to real-time logistics control — fast',
+      body: 'Connect your existing camera network and start detecting vehicles, pallets, and goods movement in days. No custom hardware, no fragile pipelines — just a managed, scalable platform that fits your ERP/WMS.',
+      ctaPrimary: 'See Pricing',
+      ctaSecondary: 'Contact Us',
     },
   },
   es: {
@@ -105,8 +141,9 @@ export const i18nDict: Record<Locale, {
       ],
     },
     social: {
-      trusted: 'Confiado por líderes en logística, manufactura y retail',
-      logosAlt: 'Logotipos de socios y clientes',
+      trusted: 'Construido con un stack moderno y probado',
+      logosAlt: 'Logotipos del ecosistema tecnológico',
+      tech: ['AWS', 'Kubernetes', 'Terraform', 'OpenCV', 'Python', 'ONVIF'],
     },
     valueProps: {
       title: 'Por qué ANGai',
@@ -131,36 +168,34 @@ export const i18nDict: Record<Locale, {
           title: 'SaaS escalable',
           text: 'Escala de un sitio a cientos con una plataforma en la nube totalmente gestionada.',
         },
-      ],
-    },
-    social: {
-      trusted: 'Confiado por líderes en logística, manufactura y retail',
-      logosAlt: 'Logotipos de socios y clientes',
-    },
-    valueProps: {
-      title: 'Por qué ANGai',
-      items: [
         {
-          iconLabel: 'Integración',
-          title: 'Integración sencilla',
-          text: 'Conecta con tu red de cámaras existente en minutos — sin hardware adicional.',
+          iconLabel: 'Edge',
+          title: 'Edge + Cloud',
+          text: 'Ejecuta modelos en el edge o en la nube para equilibrar latencia y costo.',
         },
         {
-          iconLabel: 'Tiempo real',
-          title: 'Detección en tiempo real',
-          text: 'Recibe alertas instantáneas de vehículos, pallets y movimientos de mercancías.',
+          iconLabel: 'Privacidad',
+          title: 'Seguridad y privacidad',
+          text: 'Acceso basado en roles, opciones on-prem y anonimización para material sensible.',
         },
         {
-          iconLabel: 'Reportes',
-          title: 'Reportes accionables',
-          text: 'Accede a auditorías detalladas, KPIs y documentación lista para cumplimiento.',
+          iconLabel: 'Integraciones',
+          title: 'Integraciones ERP/WMS',
+          text: 'Conecta con tu ERP/WMS vía REST/Webhooks para flujos automatizados.',
         },
         {
-          iconLabel: 'Escalable',
-          title: 'SaaS escalable',
-          text: 'Escala de un sitio a cientos con una plataforma en la nube totalmente gestionada.',
+          iconLabel: 'FinOps',
+          title: 'Control de costos',
+          text: 'Precios basados en uso, monitoreo y optimizaciones para mantener costos predecibles.',
         },
       ],
+    },
+    promise: {
+      kicker: 'Despliega en días, no meses',
+      title: 'De cámaras a control logístico en tiempo real — rápido',
+      body: 'Conecta tu red de cámaras existente y empieza a detectar vehículos, pallets y movimientos en días. Sin hardware a medida, sin pipelines frágiles — plataforma gestionada y escalable que encaja con tu ERP/WMS.',
+      ctaPrimary: 'Ver Precios',
+      ctaSecondary: 'Contáctanos',
     },
   },
 };
