@@ -31,6 +31,12 @@ export const i18nDict: Record<Locale, {
       text: string;
     }[];
   };
+  promise: {
+    kicker: string;
+    title: string;
+    body: string;
+    cta: string;
+  };
 }> = {
   en: {
     navbar: {
@@ -81,6 +87,12 @@ export const i18nDict: Record<Locale, {
           text: 'Grow from one site to hundreds with a fully managed cloud platform.',
         },
       ],
+    },
+    promise: {
+      kicker: 'Deploy in days, not months',
+      title: 'From cameras to real-time logistics control — fast',
+      body: 'Connect your existing camera network and start detecting vehicles, pallets, and goods movement in days. No custom hardware, no fragile pipelines — just a managed, scalable platform that fits your ERP/WMS.',
+      cta: 'Start now',
     },
   },
   es: {
@@ -133,34 +145,11 @@ export const i18nDict: Record<Locale, {
         },
       ],
     },
-    social: {
-      trusted: 'Confiado por líderes en logística, manufactura y retail',
-      logosAlt: 'Logotipos de socios y clientes',
-    },
-    valueProps: {
-      title: 'Por qué ANGai',
-      items: [
-        {
-          iconLabel: 'Integración',
-          title: 'Integración sencilla',
-          text: 'Conecta con tu red de cámaras existente en minutos — sin hardware adicional.',
-        },
-        {
-          iconLabel: 'Tiempo real',
-          title: 'Detección en tiempo real',
-          text: 'Recibe alertas instantáneas de vehículos, pallets y movimientos de mercancías.',
-        },
-        {
-          iconLabel: 'Reportes',
-          title: 'Reportes accionables',
-          text: 'Accede a auditorías detalladas, KPIs y documentación lista para cumplimiento.',
-        },
-        {
-          iconLabel: 'Escalable',
-          title: 'SaaS escalable',
-          text: 'Escala de un sitio a cientos con una plataforma en la nube totalmente gestionada.',
-        },
-      ],
+    promise: {
+      kicker: 'Despliega en días, no meses',
+      title: 'De cámaras a control logístico en tiempo real — rápido',
+      body: 'Conecta tu red de cámaras existente y empieza a detectar vehículos, pallets y movimientos de mercancías en días. Sin hardware a medida, sin pipelines frágiles — una plataforma gestionada y escalable que encaja con tu ERP/WMS.',
+      cta: 'Empezar ahora',
     },
   },
 };
