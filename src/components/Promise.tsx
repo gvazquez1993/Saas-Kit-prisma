@@ -16,12 +16,20 @@ export const Promise: React.FC = () => {
         <p className="mt-4 text-base sm:text-lg text-muted-foreground">
           {t.promise.body}
         </p>
-        <div className="mt-6">
+
+        {/* CTAs: primary Pricing + secondary Contact */}
+        <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 justify-center">
           <Link
-            href="/demo"
+            href="#pricing"
             className="inline-flex items-center justify-center rounded-lg px-5 py-3 bg-primary text-white font-medium hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
           >
-            {t.promise.cta}
+            {t.promise.ctaPrimary}
+          </Link>
+          <Link
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-lg px-5 py-3 border font-medium hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            {t.promise.ctaSecondary}
           </Link>
         </div>
       </div>
