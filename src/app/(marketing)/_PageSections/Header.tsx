@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils/helpers';
 import { Nav } from './NavBar';
 import { MainLogoText } from '@/components/MainLogo';
-import { ThemeDropDownMenu } from '../../../components/ThemeDropdown';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useI18n } from '@/components/I18nProvider';
 
@@ -23,14 +22,13 @@ export const Header = () => {
       <div className="flex items-center justify-between p-6">
         <MainLogoText />
         <Nav items={routes} />
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-3">
           <Link
             href="/demo"
             className={cn(buttonVariants({ size: 'sm' }), 'px-6')}
           >
             {t.navbar.requestDemo}
           </Link>
-          <ThemeDropDownMenu />
           <LanguageSwitcher />
           <Link
             href="/auth/login"

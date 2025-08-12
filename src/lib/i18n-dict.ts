@@ -12,10 +12,11 @@ export const i18nDict: Record<Locale, {
     login: string;
   };
   hero: {
-    title: string;
-    subtitle: string;
-    ctaPrimary: string;
-    ctaSecondary: string;
+    h1: string;
+    sub: string;
+    cta1: string;
+    cta2: string;
+    imageAlt: string;
     bullets: string[];
   };
   social: {
@@ -41,11 +42,11 @@ export const i18nDict: Record<Locale, {
       login: 'Login',
     },
     hero: {
-      title: 'Computer Vision for Real-Time Logistics Control',
-      subtitle:
-        'Detect, track, and audit everything that enters, leaves, or moves inside your logistics center or factory — using your existing cameras.',
-      ctaPrimary: 'Request a Demo',
-      ctaSecondary: 'Explore Use Cases',
+      h1: 'Computer Vision for Real-Time Logistics Control',
+      sub: 'Detect, track, and audit everything that enters, leaves, or moves inside your logistics center or factory — using your existing cameras.',
+      cta1: 'Request a Demo',
+      cta2: 'Explore Use Cases',
+      imageAlt: 'ANGai dashboard preview',
       bullets: [
         'Plug & play with your existing camera network',
         'Instant alerts and comprehensive reports',
@@ -92,15 +93,44 @@ export const i18nDict: Record<Locale, {
       login: 'Iniciar sesión',
     },
     hero: {
-      title: 'Visión por computadora para el control logístico en tiempo real',
-      subtitle:
-        'Detecta, rastrea y audita todo lo que entra, sale o se mueve dentro de tu centro logístico o fábrica utilizando tus cámaras existentes.',
-      ctaPrimary: 'Solicitar una demo',
-      ctaSecondary: 'Explorar casos de uso',
+      h1: 'Visión por computadora para control logístico en tiempo real',
+      sub: 'Detecta, rastrea y audita todo lo que entra, sale o se mueve dentro de tu centro logístico o fábrica — usando tus cámaras existentes.',
+      cta1: 'Solicitar demo',
+      cta2: 'Ver casos de uso',
+      imageAlt: 'Vista previa del panel de ANGai',
       bullets: [
-        'Plug & play con tu red de cámaras existente',
-        'Alertas instantáneas e informes completos',
-        'Totalmente escalable y compatible con ERP/WMS',
+        'Plug & play con tus cámaras existentes',
+        'Alertas instantáneas y reportes completos',
+        'Totalmente escalable y listo para ERP/WMS',
+      ],
+    },
+    social: {
+      trusted: 'Confiado por líderes en logística, manufactura y retail',
+      logosAlt: 'Logotipos de socios y clientes',
+    },
+    valueProps: {
+      title: 'Por qué ANGai',
+      items: [
+        {
+          iconLabel: 'Integración',
+          title: 'Integración sencilla',
+          text: 'Conecta con tu red de cámaras existente en minutos — sin hardware adicional.',
+        },
+        {
+          iconLabel: 'Tiempo real',
+          title: 'Detección en tiempo real',
+          text: 'Recibe alertas instantáneas de vehículos, pallets y movimientos de mercancías.',
+        },
+        {
+          iconLabel: 'Reportes',
+          title: 'Reportes accionables',
+          text: 'Accede a auditorías detalladas, KPIs y documentación lista para cumplimiento.',
+        },
+        {
+          iconLabel: 'Escalable',
+          title: 'SaaS escalable',
+          text: 'Escala de un sitio a cientos con una plataforma en la nube totalmente gestionada.',
+        },
       ],
     },
     social: {
