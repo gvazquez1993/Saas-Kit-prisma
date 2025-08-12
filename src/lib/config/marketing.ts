@@ -68,15 +68,6 @@ const config = {
       apple: '/apple-touch-icon.png'
     },
     manifest: `${siteConfig.url}/site.webmanifest`
-  },
-  copy: {
-    cta: {
-      heading: 'Boost your productivity.',
-      heading_line2: 'Start using our app today.',
-      subheading: `Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea.`,
-      link1_text: 'See Pricing',
-      link2_text: '  Learn More '
-    }
   }
 };
 

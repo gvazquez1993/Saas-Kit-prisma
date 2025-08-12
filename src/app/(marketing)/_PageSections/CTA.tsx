@@ -1,39 +1,34 @@
-import { buttonVariants } from '@/components/ui/Button';
+'use client';
 import Link from 'next/link';
-import { cn } from '@/lib/utils/helpers';
-import config from '@/lib/config/marketing';
+import { useI18n } from '@/components/I18nProvider';
 
 export default function CTA() {
-  const {
-    copy: { cta }
-  } = config;
-
+  const { t } = useI18n();
   return (
-    <div className="">
-      <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl">
-            {cta.heading}
-            <br />
-            {cta.heading_line2}
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-500">{cta.subheading}</p>
-          <div className="mt-10 space-x-4">
-            <Link href="/pricing" className={cn(buttonVariants({ size: 'lg' }))}>
-              {cta.link1_text}
-            </Link>
-            <Link
-              href="/faq"
-              target="_blank"
-              rel="noreferrer"
-              className={cn(buttonVariants({ variant: 'ghost', size: 'lg' }))}
-            >
-              {cta.link2_text}
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
+    <section id="cta" className="py-14 sm:py-16">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+          {/* Simple headline; adjust later if needed */}
+          Ready to see ANGai in action?
+        </h2>
+        <p className="mt-3 text-base sm:text-lg text-muted-foreground">
+          Start with our pricing or talk to us to tailor a plan for your operations.
+        </p>
+        <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 justify-center">
+          <Link
+            href="#pricing"
+            className="inline-flex items-center justify-center rounded-lg px-5 py-3 bg-primary text-white font-medium hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            {t.promise.ctaPrimary /* 'See Pricing' / 'Ver Precios' */}
+          </Link>
+          <Link
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-lg px-5 py-3 border font-medium hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            {t.promise.ctaSecondary /* 'Contact Us' / 'Contáctanos' */}
+          </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

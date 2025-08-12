@@ -5,11 +5,14 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import NextTopLoader from 'nextjs-toploader';
 import config from '@/lib/config/site';
 import { I18nProvider } from '@/components/I18nProvider';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 const RootLayout = ({ children }) => {
   return (
-    <html suppressHydrationWarning lang="en"> 
-      <body>
+    <html suppressHydrationWarning lang="en" className={`${inter.variable} font-sans`}>
+      <body className="antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
