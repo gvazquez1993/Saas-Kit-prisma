@@ -193,10 +193,9 @@ export const i18nDict: Record<Locale, {
     promise: {
       kicker: 'Despliega en días, no meses',
       title: 'De cámaras a control logístico en tiempo real — rápido',
-      body: 'Conecta tu red de cámaras existente y empieza a detectar vehículos, pallets y movimientos en días. Sin hardware a medida, sin pipelines frágiles — plataforma gestionada y escalable que encaja con tu ERP/WMS.',
+      body: 'Conecta tu red de cámaras existente y empieza a detectar vehículos, pallets y movimientos de mercancías en días. Sin hardware a medida, sin pipelines frágiles — una plataforma gestionada y escalable que encaja con tu ERP/WMS.',
       ctaPrimary: 'Ver Precios',
       ctaSecondary: 'Contáctanos',
     },
   },
 };
-

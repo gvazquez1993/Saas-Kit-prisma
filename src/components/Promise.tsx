@@ -16,6 +16,8 @@ export const Promise: React.FC = () => {
         <p className="mt-4 text-base sm:text-lg text-muted-foreground">
           {t.promise.body}
         </p>
+
+        {/* CTAs: primary Pricing + secondary Contact */}
         <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 justify-center">
           <Link
             href="#pricing"
