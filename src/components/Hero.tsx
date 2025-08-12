@@ -7,18 +7,11 @@ import { Icons } from '@/components/Icons';
 import { cn } from '@/lib/utils/helpers';
 import { useI18n } from '@/components/I18nProvider';
 
-const features = [
-  'Plug & play with your existing camera network',
-  'Instant alerts and comprehensive reports',
-  'Fully scalable and ERP/WMS-ready'
-];
-
 
 const demoLink = '/demo';
 
 export default function Hero() {
   const { t } = useI18n();
-  const features = t.hero.bullets;
   return (
     <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:px-8">
@@ -29,7 +22,7 @@ export default function Hero() {
           <p className="mt-6 text-lg text-muted-foreground">
             {t.hero.subtitle}
             Computer Vision for Real-Time Logistics Control
-          </h1>
+          </p>
           <p className="mt-6 text-lg text-muted-foreground">
             Detect, track, and audit everything that enters, leaves, or moves inside your logistics center or factory — using your existing cameras.
           </p>
@@ -53,7 +46,7 @@ export default function Hero() {
             </Link>
           </div>
           <ul role="list" className="mt-8 space-y-3">
-            {features.map((feature) => (
+            {t.hero.bullets.map((feature) => (
               <li key={feature} className="flex gap-3">
                 <Icons.Check className="h-5 w-5 flex-none text-primary" aria-hidden="true" />
                 <span className="text-sm sm:text-base">{feature}</span>
