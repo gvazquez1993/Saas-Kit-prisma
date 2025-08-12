@@ -1,7 +1,5 @@
-
 'use client';
 import Link from 'next/link';
-
 import { Icons } from '@/components/Icons';
 import { useI18n } from '@/components/I18nProvider';
 
@@ -17,23 +15,32 @@ export default function Hero() {
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
             {t.hero.h1}
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground">{t.hero.sub}</p>
+
+          <p className="mt-4 text-lg text-muted-foreground">
+            {t.hero.sub}
+          </p>
+
+          {/* CTAs: stacked on mobile, inline on desktop */}
           <div className="mt-6 flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
             <Link
               href={demoLink}
               className="w-full sm:w-auto bg-primary text-white font-medium rounded-lg px-5 py-3 text-center hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+              aria-label={t.hero.cta1}
             >
               {t.hero.cta1}
             </Link>
             <Link
               href="#use-cases"
               className="w-full sm:w-auto text-base font-medium underline underline-offset-4 hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 text-center"
+              aria-label={t.hero.cta2}
             >
               {t.hero.cta2}
             </Link>
           </div>
+
+          {/* Bullets */}
           <ul role="list" className="mt-8 space-y-3">
-            {t.hero.bullets.map((feature) => (
+            {t.hero.bullets.map((feature: string) => (
               <li key={feature} className="flex gap-3">
                 <Icons.Check className="h-5 w-5 flex-none text-primary" aria-hidden="true" />
                 <span className="text-sm sm:text-base">{feature}</span>
@@ -41,6 +48,8 @@ export default function Hero() {
             ))}
           </ul>
         </div>
+
+        {/* Image / placeholder */}
         <div className="relative w-full">
           <div className="aspect-[16/10] w-full rounded-xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-neutral-700 dark:to-neutral-800 flex items-center justify-center text-muted-foreground">
             <span aria-hidden="true">Product Screenshot</span>
@@ -51,4 +60,3 @@ export default function Hero() {
     </section>
   );
 }
-

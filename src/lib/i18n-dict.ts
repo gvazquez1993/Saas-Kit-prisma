@@ -93,10 +93,10 @@ export const i18nDict: Record<Locale, {
       login: 'Iniciar sesión',
     },
     hero: {
-      h1: 'Visión por computadora para el control logístico en tiempo real',
-      sub: 'Detecta, rastrea y audita todo lo que entra, sale o se mueve dentro de tu centro logístico o fábrica utilizando tus cámaras existentes.',
-      cta1: 'Solicitar una demo',
-      cta2: 'Explorar casos de uso',
+      h1: 'Visión por computadora para control logístico en tiempo real',
+      sub: 'Detecta, rastrea y audita todo lo que entra, sale o se mueve dentro de tu centro logístico o fábrica — usando tus cámaras existentes.',
+      cta1: 'Solicitar demo',
+      cta2: 'Ver casos de uso',
       imageAlt: 'Vista previa del panel de ANGai',
       bullets: [
         'Plug & play con tus cámaras existentes',
