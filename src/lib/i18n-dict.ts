@@ -43,8 +43,7 @@ export const i18nDict: Record<Locale, {
     },
     hero: {
       h1: 'Computer Vision for Real-Time Logistics Control',
-      sub:
-        'Detect, track, and audit everything that enters, leaves, or moves inside your logistics center or factory — using your existing cameras.',
+      sub: 'Detect, track, and audit everything that enters, leaves, or moves inside your logistics center or factory — using your existing cameras.',
       cta1: 'Request a Demo',
       cta2: 'Explore Use Cases',
       imageAlt: 'ANGai dashboard preview',
@@ -95,15 +94,14 @@ export const i18nDict: Record<Locale, {
     },
     hero: {
       h1: 'Visión por computadora para el control logístico en tiempo real',
-      sub:
-        'Detecta, rastrea y audita todo lo que entra, sale o se mueve dentro de tu centro logístico o fábrica utilizando tus cámaras existentes.',
+      sub: 'Detecta, rastrea y audita todo lo que entra, sale o se mueve dentro de tu centro logístico o fábrica utilizando tus cámaras existentes.',
       cta1: 'Solicitar una demo',
       cta2: 'Explorar casos de uso',
       imageAlt: 'Vista previa del panel de ANGai',
       bullets: [
-        'Plug & play con tu red de cámaras existente',
-        'Alertas instantáneas e informes completos',
-        'Totalmente escalable y compatible con ERP/WMS',
+        'Plug & play con tus cámaras existentes',
+        'Alertas instantáneas y reportes completos',
+        'Totalmente escalable y listo para ERP/WMS',
       ],
     },
     social: {

@@ -1,5 +1,4 @@
 import '../styles/globals.css';
-import { InterFont } from '@/styles/fonts';
 import { ThemeProvider } from '@/styles/ThemeProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -9,7 +8,7 @@ import { I18nProvider } from '@/components/I18nProvider';
 
 const RootLayout = ({ children }) => {
   return (
-    <html suppressHydrationWarning lang="en" className={`${InterFont.variable}`}>
+    <html suppressHydrationWarning lang="en"> 
       <body>
         <ThemeProvider
           attribute="class"
