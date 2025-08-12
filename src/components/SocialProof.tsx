@@ -13,14 +13,16 @@ export const SocialProof: React.FC = () => {
         </h2>
         <div
           aria-label={t.social.logosAlt}
-          className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center opacity-80"
+          className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center opacity-80"
         >
-          {/* Replace placeholders with real logos when available */}
-          <div className="h-8 w-24 bg-neutral-300 dark:bg-neutral-700 rounded-md" aria-hidden="true" />
-          <div className="h-8 w-24 bg-neutral-300 dark:bg-neutral-700 rounded-md" aria-hidden="true" />
-          <div className="h-8 w-24 bg-neutral-300 dark:bg-neutral-700 rounded-md" aria-hidden="true" />
-          <div className="h-8 w-24 bg-neutral-300 dark:bg-neutral-700 rounded-md" aria-hidden="true" />
-          <div className="h-8 w-24 bg-neutral-300 dark:bg-neutral-700 rounded-md" aria-hidden="true" />
+          {t.social.tech.slice(0, 6).map((name: string) => (
+            <div
+              key={name}
+              className="h-9 min-w-28 px-4 rounded-md border text-sm flex items-center justify-center text-muted-foreground"
+            >
+              {name}
+            </div>
+          ))}
         </div>
       </div>
     </section>

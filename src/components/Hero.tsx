@@ -22,19 +22,18 @@ export default function Hero() {
             {t.hero.sub}
           </p>
 
-          {/* CTAs: stacked on mobile, inline on desktop */}
-          <div className="mt-6 flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
+          {/* CTAs: stacked on mobile, aligned inline on desktop */}
+          <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
             <Link
               href={demoLink}
-              className="w-full sm:w-auto bg-primary text-white font-medium rounded-lg px-5 py-3 text-center hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+              className="inline-flex items-center justify-center w-full sm:w-auto rounded-lg px-5 py-3 bg-primary text-white font-medium hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
               aria-label={t.hero.cta1}
             >
               {t.hero.cta1}
             </Link>
-
             <Link
               href="#use-cases"
-              className="w-full sm:w-auto text-base font-medium underline underline-offset-4 hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 text-center"
+              className="inline-flex items-center justify-center w-full sm:w-auto rounded-lg px-5 py-3 border bg-transparent font-medium hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
               aria-label={t.hero.cta2}
             >
               {t.hero.cta2}
